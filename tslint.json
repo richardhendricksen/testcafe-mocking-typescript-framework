@@ -1,0 +1,33 @@
+{
+  "linterOptions": {
+    "exclude": [
+      "**/*.js"
+    ]
+  },
+  "rules": {
+    "max-line-length": [
+      true,
+      150
+    ],
+    "no-floating-promises": true,
+    "no-return-await": true,
+    "await-promise": true,
+    "semicolon": true,
+    "ban": [
+      true,
+      "eval",
+      {
+        "name": ["test", "only"],
+        "message": "do not commit with test.only"
+      },
+      {
+        "name": ["fixture", "only"],
+        "message": "do not commit with fixture.only"
+      },
+      {
+        "name": ["t", "debug"],
+        "message": "do not commit with debug statements"
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "allowJs": true,
+    "checkJs": true,
+    "alwaysStrict": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es2016", "es2017", "dom"],
+    "baseUrl": "./",
+    "types": [
+      "node",
+      "testcafe"
+    ],
+    "paths": {
+      "@po": [
+        "po/index"
+      ],
+      "@mocking": [
+        "mocking/index"
+      ],
+      "@config": [
+        "config/config"
+      ]
+    }
+  }
+}
