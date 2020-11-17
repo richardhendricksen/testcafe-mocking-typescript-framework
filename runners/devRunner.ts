@@ -1,14 +1,13 @@
 import createTestCafe from 'testcafe';
-
-function registerTsconfigPaths() {
-    const tsConfigPaths = require("tsconfig-paths");
-    return tsConfigPaths.register({ baseUrl: "./", paths: require('../tsconfig.json').compilerOptions.paths });
-}
+import { TestrunConfig } from '../config/testrun-config';
+import {config} from '../config/it-config';
+import { registerTsconfigPaths } from '../config/register-tsconfig-paths';
 
 process.env.ALLURE_RESULT_DIR = '/.reports/allure/allure-results';
 
 async function run(): Promise<void> {
-    registerTsconfigPaths();
+    registerTsconfigPaths('../tsconfig.json');
+    TestrunConfig.setConfig(config);
 
     const t = await createTestCafe();
 

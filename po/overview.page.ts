@@ -1,6 +1,5 @@
 import { Selector, t } from 'testcafe';
-
-import { config } from '@config';
+import { TestrunConfig } from '../config/testrun-config';
 
 export class OverviewPage {
 
@@ -10,7 +9,7 @@ export class OverviewPage {
     };
 
     static async open(product: string): Promise<void> {
-        await t.navigateTo(`${config.baseUrl}/overview`);
+        await t.navigateTo(`${TestrunConfig.getConfig().baseUrl}/overview`);
         // await this.$.welcomeText.with({visibilityCheck: true})();
     }
 }

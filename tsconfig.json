@@ -21,9 +21,6 @@
       ],
       "@mocking": [
         "mocking/index"
-      ],
-      "@config": [
-        "config/config"
       ]
     }
   }

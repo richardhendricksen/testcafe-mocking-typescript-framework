@@ -1,7 +1,5 @@
 const ALLURE_RESULT_DIR = process.env.ALLURE_RESULT_DIR || process.abort();
 
-console.log(ALLURE_RESULT_DIR);
-
 const DOC_ALLURE_CONFIG = {
   RESULT_DIR: ALLURE_RESULT_DIR,
   META: {

@@ -1,5 +1,5 @@
 import { OverviewPage } from '@po';
-import { LOW_RES, NORMAL_RES } from '@config';
+import { LOW_RES, NORMAL_RES } from '../config/it-config';
 import { Endpoints, Mock } from '@mocking';
 
 [NORMAL_RES].forEach(resolution => {
