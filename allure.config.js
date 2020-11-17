@@ -1,6 +1,7 @@
+const ALLURE_RESULT_DIR = process.env.ALLURE_RESULT_DIR || process.abort();
+
 module.exports = {
-    RESULT_DIR: '.reports/allure/allure-results',
-    REPORT_DIR: '.reports/allure/allure-report',
+    RESULT_DIR: ALLURE_RESULT_DIR,
     SCREENSHOT_DIR: 'screenshots/actual',
 
     CLEAN_RESULT_DIR: true,

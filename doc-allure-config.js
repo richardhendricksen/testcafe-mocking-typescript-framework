@@ -1,10 +1,9 @@
-const RESULT_DIR = process.env.RESULT_DIR || '/.reports/allure/allure-results';
+const ALLURE_RESULT_DIR = process.env.ALLURE_RESULT_DIR || process.abort();
+
+console.log(ALLURE_RESULT_DIR);
 
 const DOC_ALLURE_CONFIG = {
-  CLEAN_REPORT_DIR: true,
-  COPY_HISTORY: true,
-  RESULT_DIR: RESULT_DIR,
-  REPORT_DIR: '/.reports/allure-report',
+  RESULT_DIR: ALLURE_RESULT_DIR,
   META: {
     STORY_ID: 'STORY',
     TEST_ID: 'ID',
