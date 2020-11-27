@@ -1,7 +1,7 @@
 import { Selector, t } from 'testcafe';
 import { TestrunConfig } from '../config/testrun-config';
 
-export class OverviewPage {
+export class TestPage {
 
     static $ = new class {
         welcomeText = Selector('body');
