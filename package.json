@@ -25,7 +25,7 @@
     "test": "ts-node runners/devRunner.ts",
     "test:ci": "ts-node runners/ciRunner.ts",
     "test:report:open": "allure serve .reports/allure/allure-results",
-    "test:report:generate": "allure generate .reports/allure/allure-results -o .reports/allure/allure-resport --clean",
+    "test:report:generate": "allure generate .reports/allure/allure-results -o .reports/allure/allure-report --clean",
     "lint": "tslint -p .",
     "docker:build": "docker build . -t testcafe-runner",
     "docker:test": "docker run --rm -v $(pwd)/.reports:/testcafe/.reports testcafe-runner  yarn test:ci"
