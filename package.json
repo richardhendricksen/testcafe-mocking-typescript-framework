@@ -24,7 +24,10 @@
   "scripts": {
     "test": "ts-node runners/devRunner.ts",
     "test:ci": "ts-node runners/ciRunner.ts",
-    "test:report": "allure serve .reports/allure/allure-results",
-    "lint": "tslint -p ."
+    "test:report:open": "allure serve .reports/allure/allure-results",
+    "test:report:generate": "allure generate .reports/allure/allure-results -o .reports/allure/allure-resport --clean",
+    "lint": "tslint -p .",
+    "docker:build": "docker build . -t testcafe-runner",
+    "docker:test": "docker run --rm testcafe-runner yarn test:ci"
   }
 }

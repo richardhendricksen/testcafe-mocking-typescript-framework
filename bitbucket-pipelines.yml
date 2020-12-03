@@ -1,0 +1,42 @@
+image: node:12
+options:
+  max-time: 60
+
+clone:
+  depth: full
+
+definitions:
+  steps:
+    - step: &yarn_install
+        name: Install node dependencies
+        caches:
+          - node
+        script:
+          - yarn install --frozen-lockfile
+        artifacts:
+          - node_modules/**  # copy these files to later steps
+
+    - step: &it
+        name: IT
+        image: circleci/node:12-browsers
+        size: 2x  # Double resources available for this step.
+        services:
+          - docker
+        caches:
+          - docker
+        script:
+          - yarn it:ci
+        after-script:
+          - yarn it:report:generate
+          - ./pipelines/upload_report.sh apps/p1-it/allure-report/ p1-it/report/suite-${TESTCAFE_SUITE} # use aws-cli docker container to upload report
+          - ./pipelines/attach_report.sh p1-it-report-suite-${TESTCAFE_SUITE} "IT P1 Report - suite ${TESTCAFE_SUITE}" "p1-it/report/suite-${TESTCAFE_SUITE}/index.html" ${BITBUCKET_EXIT_CODE} # attach report to pipeline
+
+pipelines:
+  branches:
+    master:
+      - step: *yarn_install
+      - step: *it
+  pull-requests:
+    "**":
+      - step: *yarn_install
+      - step: *it

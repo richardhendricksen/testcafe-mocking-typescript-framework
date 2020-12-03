@@ -15,7 +15,7 @@ async function run(): Promise<void> {
 
     const failedCount = await runner
         .src(['tests/**/*.spec.ts'])
-        .browsers('chrome:headless')
+        .browsers('chrome --headless --no-sandbox --disable-dev-shm-usage --autoplay-policy=no-user-gesture-required')
         .screenshots('screenshots', true)
         .reporter(['spec', 'allure'])
         .tsConfigPath('tsconfig.json')
