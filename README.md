@@ -2,17 +2,19 @@
 
 ## Run
 
-Local: `yarn test`
+####Local
+`yarn test`
 
-In docker:  
+####Docker  
 First build with `yarn docker:build`.  
 Then run with `yarn docker:test`.
 
+####Reporting
 Reporting: `yarn test:report:open`
 
 
 ## CI
 Run with CI config: `yarn test:ci`
 
-Bitbucket Pipelines:
-- See `bitbucket-pipelines.yml`
+####Bitbucket Pipelines
+See `bitbucket-pipelines.yml`
