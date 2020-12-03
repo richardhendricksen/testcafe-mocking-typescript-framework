@@ -28,6 +28,6 @@
     "test:report:generate": "allure generate .reports/allure/allure-results -o .reports/allure/allure-resport --clean",
     "lint": "tslint -p .",
     "docker:build": "docker build . -t testcafe-runner",
-    "docker:test": "docker run --rm testcafe-runner yarn test:ci"
+    "docker:test": "docker run --rm -v $(pwd)/.reports:/testcafe/.reports testcafe-runner  yarn test:ci"
   }
 }
