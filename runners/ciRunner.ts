@@ -17,6 +17,7 @@ async function run(): Promise<void> {
         .src(['tests/**/*.spec.ts'])
         .browsers('chrome --headless --no-sandbox --disable-dev-shm-usage --autoplay-policy=no-user-gesture-required')
         .screenshots('screenshots', true)
+        .concurrency(5)
         .reporter(['spec', 'allure'])
         .tsConfigPath('tsconfig.json')
         .run({quarantineMode: true});

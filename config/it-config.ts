@@ -2,7 +2,7 @@ import { IConfig } from './testrun-config';
 
 export const config: IConfig = {
     baseUrl: {
-        app: 'http://localhost:9091'
+        app: 'https://devexpress.github.io/testcafe/example/'
     },
     it: {
         resolutions: {
