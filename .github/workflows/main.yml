@@ -9,13 +9,20 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-
       - name: Install required dependencies
         run: |
           yarn install --lockfile
 
       - name: Run test
         run: yarn test
+
+      - name: Create HTML report
+        if: ${{ always() }}
+        run: yarn test:report:generate
+
+      - name: Archive HTML report
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: html report
+          path: reports/allure/allure-report/**
