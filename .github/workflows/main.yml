@@ -5,7 +5,9 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: circleci/node:12-browsers
+    container:
+      image: circleci/node:12-browsers
+      options: --user root
     steps:
       - uses: actions/checkout@v1
 
