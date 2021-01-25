@@ -3,7 +3,7 @@ import { TestrunConfig } from '../config/testrun-config';
 import { config } from '../config/it-config';
 import { registerTsconfigPaths } from '../config/register-tsconfig-paths';
 
-process.env.ALLURE_RESULT_DIR = '/.reports/allure/allure-results';
+process.env.ALLURE_RESULT_DIR = '/reports/allure/allure-results';
 
 async function run(): Promise<void> {
     registerTsconfigPaths('../tsconfig.json');
