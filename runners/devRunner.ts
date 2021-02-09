@@ -18,7 +18,11 @@ async function run(): Promise<void> {
         .browsers('chrome --autoplay-policy=no-user-gesture-required')
         .screenshots('screenshots', true)
         .reporter(['spec', 'allure'])
-        .tsConfigPath('tsconfig.json')
+        .compilerOptions({
+            typescript: {
+                configPath: 'tsconfig.json'
+            }
+        })
         .run({
             debugOnFail: true
         });
