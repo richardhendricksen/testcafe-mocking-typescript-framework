@@ -1,8 +1,13 @@
-FROM circleci/node:12-browsers-legacy
-# Install node dependencies in seperate folder of our framework, this prevents them from being overwritten by the hosts node_modules folder
-COPY --chown=circleci package.json /testcafe/package.json
-COPY --chown=circleci yarn.lock /testcafe/yarn.lock
-WORKDIR /testcafe
+FROM circleci/node:12-browsers
+
+COPY --chown=circleci package.json /runner/package.json
+COPY --chown=circleci yarn.lock /runner/yarn.lock
+
+WORKDIR /runner
+
+# Install node dependencies in parent folder of our framework, this prevents them from being overwritten by the hosts node_modules folder
 RUN yarn install --frozen-lockfile
-ENV PATH=/testcafe/node_modules/.bin:$PATH
-WORKDIR /testcafe/framework
+
+ENV PATH=/runner/node_modules/.bin:$PATH
+
+WORKDIR /runner/framework
