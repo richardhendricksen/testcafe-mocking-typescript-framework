@@ -19,8 +19,6 @@ services:
     image: "docker:dind"
     networks:
       jenkins:
-        aliases:
-          - docker
     environment:
       - DOCKER_TLS_CERTDIR=/certs
     volumes:
