@@ -29,3 +29,6 @@ See `bitbucket-pipelines.yml`
 
 #### Jenkins
 See `Jenkinsfile`
+
+#### Github Actions
+See `.github/workflows/main.yml`
