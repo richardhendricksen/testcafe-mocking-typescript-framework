@@ -1,5 +1,8 @@
 # Testcafe Framework with mocking support in Typescript
 
+## Blog
+For more information on running TestCafe tests in Docker, check my Medium post [here](https://rhendricksen.medium.com/running-testcafe-tests-in-docker-locally-and-in-ci-jenkins-cf8d72b69bbb). 
+
 ## Run
 
 #### Local
@@ -23,3 +26,6 @@ Run with CI config: `yarn test:ci`
 
 #### Bitbucket Pipelines
 See `bitbucket-pipelines.yml`
+
+#### Jenkins
+See `Jenkinsfile`
