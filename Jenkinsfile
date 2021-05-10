@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh 'yarn install --lockfile'
+                        sh 'yarn install --frozen-lockfile'
                         sh 'yarn test:ci'
                     } finally {
                         sh "yarn test:report:generate"
